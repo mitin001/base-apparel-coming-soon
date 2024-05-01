@@ -10,8 +10,16 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .logo-container {
+    .logo-container, .heading-container {
       width: 100%;
+    }
+    h1 {
+      font-size: 60px;
+      text-transform: uppercase;
+    }
+    h1::first-line {
+      font-weight: lighter;
+      color: hsl(0, 36%, 70%);
     }
     
     /* mobile styles */
@@ -31,6 +39,9 @@
     .logo {
       margin: 30px;
       width: 100px;
+    }
+    h1 {
+      text-align: center;
     }
     
     /* desktop  styles */
@@ -54,6 +65,9 @@
         margin: initial;
         width: initial;
       }
+      h1 {
+        text-align: initial;
+      }
     }
 
     .attribution { font-size: 11px; text-align: center; }
@@ -69,7 +83,9 @@
           <img src="./images/logo.svg" alt="BASE APPAREL" class="logo">
         </div>
         <img src="./images/hero-mobile.jpg" alt="Fashion store" class="hero-mobile">
-        <h1>We're coming soon</h1>
+        <div class="heading-container">
+          <h1>We're <br/> coming <br/> soon</h1>
+        </div>
         <p>
           Hello fellow shoppers! We're currently building our new fashion store.
           Add your email below to stay up-to-date with announcements and our launch deals.
