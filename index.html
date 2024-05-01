@@ -10,11 +10,11 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    main, section, article {
+    main, article, section {
       display: grid;
       justify-items: center;
     }
-    article {
+    section {
       width: 375px;
     }
     
@@ -34,12 +34,12 @@
       .hero-mobile {
         display: none;
       }
-      main, section {
+      main, article {
         display: flex;
         justify-content: flex-end;
         align-items: center;
       }
-      article {
+      section {
         width: 460px;
         margin: 160px;
       }
@@ -52,8 +52,8 @@
 <body>
 
   <main>
-    <section>
-      <article>
+    <article>
+      <section>
         <img src="./images/logo.svg" alt="BASE APPAREL">
         <img src="./images/hero-mobile.jpg" alt="Fashion store" class="hero-mobile">
         <h1>We're coming soon</h1>
@@ -64,9 +64,9 @@
         <label>
           <input placeholder="Email Address"/>
         </label>
-      </article>
+      </section>
       <img src="./images/hero-desktop.jpg" alt="Fashion store" class="hero-desktop">
-    </section>
+    </article>
   </main>
   
   <footer>
