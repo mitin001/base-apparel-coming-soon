@@ -10,6 +10,11 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
+    .logo-container {
+      width: 100%;
+    }
+    
+    /* mobile styles */
     main, article, section {
       display: grid;
       justify-items: center;
@@ -17,13 +22,15 @@
     section {
       width: 375px;
     }
-    
-    /* mobile styles */
     .hero-desktop {
       display: none;
     }
     .hero-mobile {
       display: block;
+    }
+    .logo {
+      margin: 30px;
+      width: 100px;
     }
     
     /* desktop  styles */
@@ -43,6 +50,10 @@
         width: 460px;
         margin: 160px;
       }
+      .logo {
+        margin: initial;
+        width: initial;
+      }
     }
 
     .attribution { font-size: 11px; text-align: center; }
@@ -54,7 +65,9 @@
   <main>
     <article>
       <section>
-        <img src="./images/logo.svg" alt="BASE APPAREL">
+        <div class="logo-container">
+          <img src="./images/logo.svg" alt="BASE APPAREL" class="logo">
+        </div>
         <img src="./images/hero-mobile.jpg" alt="Fashion store" class="hero-mobile">
         <h1>We're coming soon</h1>
         <p>
