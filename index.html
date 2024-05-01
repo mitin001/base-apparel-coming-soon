@@ -10,6 +10,25 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
+    
+    /* mobile styles */
+    .hero-desktop {
+      display: none;
+    }
+    .hero-mobile {
+      display: block;
+    }
+    
+    /* desktop  styles */
+    @media (min-width: 1440px) {
+      .hero-desktop {
+        display: block;
+      }
+      .hero-mobile {
+        display: none;
+      }
+    }
+
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
@@ -18,6 +37,8 @@
 
   <main>
     <img src="./images/logo.svg" alt="BASE APPAREL">
+    <img src="./images/hero-desktop.jpg" alt="Fashion store" class="hero-desktop">
+    <img src="./images/hero-mobile.jpg" alt="Fashion store" class="hero-mobile">
     <h1>We're coming soon</h1>
     <p>
       Hello fellow shoppers! We're currently building our new fashion store.
