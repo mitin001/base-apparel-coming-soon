@@ -10,6 +10,13 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
+    main, section {
+      display: grid;
+      justify-items: center;
+    }
+    section {
+      width: 375px;
+    }
     
     /* mobile styles */
     .hero-desktop {
@@ -36,17 +43,19 @@
 <body>
 
   <main>
-    <img src="./images/logo.svg" alt="BASE APPAREL">
-    <img src="./images/hero-desktop.jpg" alt="Fashion store" class="hero-desktop">
-    <img src="./images/hero-mobile.jpg" alt="Fashion store" class="hero-mobile">
-    <h1>We're coming soon</h1>
-    <p>
-      Hello fellow shoppers! We're currently building our new fashion store.
-      Add your email below to stay up-to-date with announcements and our launch deals.
-    </p>
-    <label>
-      <input placeholder="Email Address"/>
-    </label>
+    <section>
+      <img src="./images/logo.svg" alt="BASE APPAREL">
+      <img src="./images/hero-desktop.jpg" alt="Fashion store" class="hero-desktop">
+      <img src="./images/hero-mobile.jpg" alt="Fashion store" class="hero-mobile">
+      <h1>We're coming soon</h1>
+      <p>
+        Hello fellow shoppers! We're currently building our new fashion store.
+        Add your email below to stay up-to-date with announcements and our launch deals.
+      </p>
+      <label>
+        <input placeholder="Email Address"/>
+      </label>
+    </section>
   </main>
   
   <footer>
