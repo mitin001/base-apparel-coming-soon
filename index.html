@@ -15,6 +15,7 @@
 
     :root {
       --red: hsl(0, 36%, 70%);
+      --soft-red: hsl(0, 93%, 68%);
       --gradient: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
     }
     
@@ -23,6 +24,9 @@
     }
     
     /* common styles */
+    section {
+      margin: 0 0 60px;
+    }
     .logo-container, .heading-container {
       width: 100%;
     }
@@ -48,12 +52,22 @@
       border: none;
       border-radius: 32px;
       background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+      cursor: pointer;
+    }
+    .error {
+      display: none;
+      margin: -36px;
+    }
+    .correct-email {
+      display: none;
+      font-size: 12px;
+      margin: 8px;
+      color: var(--soft-red);
     }
     label {
       display: flex;
       align-items: center;
       flex-wrap: wrap;
-      margin: 0 0 70px;
     }
     input {
       width: 264px;
@@ -66,6 +80,19 @@
     }
     input, input::placeholder {
       color: var(--red);
+    }
+    input:invalid {
+      border: 2px solid var(--soft-red);
+    }
+    input:invalid + button {
+      opacity: 50%;
+    }
+    input:invalid ~ .error, input:invalid ~ .correct-email {
+      display: block;
+    }
+    label:has(> input:invalid) + .correct-email {
+      /* :has pseudo-class provides parent selector capability: https://stackoverflow.com/a/1014958/7249166 */
+      display: block;
     }
     
     /* mobile styles */
@@ -97,6 +124,9 @@
       font-size: 14px;
       text-align: center;
       margin: 36px;
+    }
+    .correct-email {
+      width: 70%;
     }
     
     /* desktop  styles */
@@ -139,6 +169,9 @@
         width: 100px;
         margin: -100px;
       }
+      .correct-email {
+        width: 90%;
+      }
     }
 
     .attribution { font-size: 11px; text-align: center; }
@@ -162,11 +195,13 @@
           Add your email below to stay up-to-date with announcements and our launch deals.
         </p>
         <label>
-          <input placeholder="Email Address"/>
+          <input placeholder="Email Address" pattern="^\S+@\S+\.\S+$"/>
           <button>
             <img src="./images/icon-arrow.svg" alt="Arrow">
           </button>
+          <img src="./images/icon-error.svg" class="error" alt="Error">
         </label>
+        <span class="correct-email">Please provide a valid email</span>
       </section>
       <img src="./images/hero-desktop.jpg" alt="Fashion store" class="hero-desktop">
     </article>
