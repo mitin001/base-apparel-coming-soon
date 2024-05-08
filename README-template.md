@@ -16,8 +16,6 @@ This is a solution to the [Base Apparel coming soon page challenge on Frontend M
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -34,18 +32,9 @@ Users should be able to:
 
 ![](./screenshot.jpg)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
-
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+[Live Site URL](https://mitin001.github.io/base-apparel-coming-soon/)
 
 ## My process
 
@@ -56,56 +45,48 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- [Google Fonts](https://fonts.google.com/selection/embed)
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
+Client-side form validation can be done without any JavaScript:
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<input placeholder="Email Address" pattern="^\S+@\S+\.\S+$"/>
 ```
+
+Here, the browser uses the regex [pattern](https://stackoverflow.com/a/201447/7249166) on the input element here to check if the entered email address is valid.
+
+When the input is invalid (does not match the pattern), the browser assigns the invalid pseudo-class to it, which can be used to notify the user of the input error:
+
 ```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+input:invalid { border: 2px solid red; }
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+If the user enters an invalid string into the input element, this CSS rule instructs the browser to draw a thick (2px) red border around it. The `:invalid` [pseudo-class](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation) assigned by the browser is used to target the element in the CSS selector.
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+Flexibility of CSS selectors allows us to avoid much scripting. For example, the heading "We're coming soon" in the [screenshot](#screenshot) is a single HTML element. The striking difference in the first line of this heading was accomplished by targeting the `::first-line` pseudo-element:
+
+```css
+h1::first-line { font-weight: 300; color: red; }
+```
+
+Different lines within the same element can have different styles thanks to pseudo-elements.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+There is no dynamic content on this page, so no JavaScript was required. However, JavaScript will be useful once the form starts sending data to an external API.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [Mozilla Developer Network](https://developer.mozilla.org/) - Guidance on HTML elements and attributes, CSS selectors, etc. Especially useful for explaining [client-side form validation](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation).
+- [W3Schools](https://www.w3schools.com/) - Alternative resource for guidance on HTML and CSS. Especially useful for explaining [CSS variables](https://www.w3schools.com/css/css3_variables.asp).
 
 ## Author
 
-- Website - [Andrey Mitin](https://mitin001.github.io/base-apparel-coming-soon/)
 - Frontend Mentor - [@mitin001](https://www.frontendmentor.io/profile/mitin001)
+- LinkedIn - [Andrey Mitin](https://www.linkedin.com/in/andrey-mitin-13824a8a)
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+This challenge was assigned to me as part of the Discussion Assignment for Unit 5 in [MSIT 5250-01 Foundations of Software Engineering](https://catalog.uopeople.edu/graduate-catalog-t1/graduate-program-of-study/the-curriculum-3) (AY2024-T4) at the University of the People.
